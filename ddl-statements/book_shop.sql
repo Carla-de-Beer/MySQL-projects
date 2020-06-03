@@ -1,9 +1,9 @@
-create schema book_shop;
+CREATE SCHEMA book_shop;
 
 use book_shop;
 
-drop table if exists book;
-drop table if exists author;
+DROP TABLE if exists book;
+DROP TABLE if exists author;
 
 CREATE TABLE book (
     book_id INT NOT NULL AUTO_INCREMENT,
@@ -34,20 +34,20 @@ CREATE TABLE author (
         ON UPDATE CASCADE ON DELETE RESTRICT
 );
 
-insert into book values (null, '9781234567897', 'The Database Book', 'Understanding SQL', 
+INSERT INTO book VALUES (null, '9781234567897', 'The Database Book', 'Understanding SQL', 
 'Tutorial on using SQL with MySQL', 23.99, '2020-04-01', '9999-01-01');
 
-select * from book;
+SELECT * FROM book;
 
-insert into author values (null, 1, 'Carla', 'de Beer', 'carla.debeer@sql.io', 
+INSERT INTO author VALUES (null, 1, 'Carla', 'de Beer', 'carla.debeer@sql.io', 
 '+44(0)2078536792', 'www.cadebe.com','2020-04-01', '9999-01-01');
 
-select * from author;
+SELECT * FROM author;
 
-alter table book add column asin char(10) after isbn;
-alter table book add column upc decimal(12, 0) after asin;
-alter table book add column ean decimal(13, 0) after upc;
-alter table book add column upc_barcode char(12) as (lpad(upc, 12, '0')) after ean;
-alter table book add column ean_barcode char(13) as (lpad(ean, 12, '0')) after upc_barcode;
+ALTER TABLE book add column asin char(10) after isbn;
+ALTER TABLE book add column upc decimal(12, 0) after asin;
+ALTER TABLE book add column ean decimal(13, 0) after upc;
+ALTER TABLE book add column upc_barcode char(12) AS (lpad(upc, 12, '0')) after ean;
+ALTER TABLE book add column ean_barcode char(13) AS (lpad(ean, 12, '0')) after upc_barcode;
 
-select lpad(12345678, 12, '0');
+SELECT lpad(12345678, 12, '0');

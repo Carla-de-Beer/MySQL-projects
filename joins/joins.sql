@@ -159,8 +159,8 @@ WHERE
 
 
 -- INSERT
-INSERT INTO departments VALUES ('d999', 'Awesome Gurus');
+INSERT INTO departments VALUES ('d999', 'Awesome Coders');
 
-INSERT INTO departments (dept_no, dept_name) VALUES ('d999', 'Awesome Gurus');
+INSERT INTO departments (dept_no, dept_name) VALUES ('d999', 'Awesome Coders');
     
-INSERT INTO employees SELECT max(emp_no) + 1, '1976-01-01', 'John', 'Thompson', 'M', '2018-06-18' FROM employees;
+INSERT INTO employees SELECT max(emp_no) + 1, '1976-01-01', 'Joe', 'Edwards', 'M', '2018-06-18' FROM employees;
